@@ -2,6 +2,7 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Blog.Authorization;
+using Blog.Features;
 
 namespace Blog
 {
@@ -13,6 +14,7 @@ namespace Blog
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<BlogAuthorizationProvider>();
+            Configuration.Features.Providers.Add<BlogFeatureProvider>();
         }
 
         public override void Initialize()

@@ -48,6 +48,7 @@ namespace Blog
                  );
 
             ConfigureTokenAuth();
+            Configuration.MultiTenancy.IsEnabled = false;//关闭多租户
         }
 
         private void ConfigureTokenAuth()

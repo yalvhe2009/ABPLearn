@@ -6,6 +6,7 @@ using Abp.Zero.Configuration;
 using Blog.Authorization.Roles;
 using Blog.Authorization.Users;
 using Blog.Configuration;
+using Blog.DynamicPropertys;
 using Blog.Localization;
 using Blog.MultiTenancy;
 using Blog.Timing;
@@ -33,6 +34,9 @@ namespace Blog
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
+            
+            //设置动态属性提供器
+            Configuration.DynamicEntityProperties.Providers.Add<BlogDynamicEntityPropertyDefinitionProvider>();
         }
 
         public override void Initialize()
